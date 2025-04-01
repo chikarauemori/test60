@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>マイページログイン</title>
-        <script
+    <title>ユーザー登録</title>
+     <script
       src="https://kit.fontawesome.com/d0a601627a.js"
       crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://yubinbango.github.io/yubinbango/yubinbango.js"
+      charset="UTF-8"
     ></script>
     <link
       href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
@@ -28,7 +32,7 @@
     </header>
     <h2>初めての方はこちら</h2>
     <h3>
-      <a href="" target="_self"
+      <a href="https://chikarauemori.github.io/test63/" target="_self"
         >＜ユーザー登録はこちら＞</a
       >
     </h3>
@@ -41,49 +45,27 @@
       method="post"
     >
       <!-- ユーザーIDは動的に追加されます -->
-      <button type="submit">ログイン</button>
+      <button type="submit">ログインされていません</button>
     </form>
 
-     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
- <script>
-   liff
-     .init({
-       liffId: "2007154146-Y5jGo0G3", // あなたのLIFF ID
-     })
-     .catch((err) => {
-       console.log(err);
-     });
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+
+
+
+
+
  
-   liff.ready.then(() => {
-     if (!liff.isLoggedIn()) {
-       liff.login();
-     }
- 
-     // ユーザープロフィール情報を取得
-     liff
-       .getProfile()
-       .then((profile) => {
-         const userId = profile.userId; // ユーザーIDを取得
- 
-         // ユーザーIDを非表示のinputフィールドとしてフォームに追加
-         const userIdField = document.createElement("input");
-         userIdField.type = "hidden"; // 見えないフィールドとして設定
-         userIdField.name = "userId"; // サーバー側で受け取る名前を指定
-         userIdField.value = userId; // ユーザーIDの値をセット
- 
-         // フォームにuserIdフィールドを追加
-         document.getElementById("userForm").appendChild(userIdField);
- 
-         // 必要に応じてボタンのテキストを変更する
-         const submitButton = document.querySelector("button");
-         submitButton.textContent = "ユーザー登録";
-       })
-       .catch((err) => {
-         console.log("プロフィール取得エラー: ", err);
-       });
-   });
- </script>
-      <nav>
+ <nav>
     <ui class="menu">
       <li>
         <a href="https://chikarauemori.github.io/test57/" target="_self"
@@ -116,15 +98,51 @@
         >
       </li>
   </nav>
+ <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+<script>
+  liff
+    .init({
+      liffId: "2007154146-Y5jGo0G3", // あなたのLIFF ID
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  liff.ready.then(() => {
+    if (!liff.isLoggedIn()) {
+      liff.login();
+    }
+
+    // ユーザープロフィール情報を取得
+    liff
+      .getProfile()
+      .then((profile) => {
+        const userId = profile.userId; // ユーザーIDを取得
+
+        // ユーザーIDを非表示のinputフィールドとしてフォームに追加
+        const userIdField = document.createElement("input");
+        userIdField.type = "hidden"; // 見えないフィールドとして設定
+        userIdField.name = "userId"; // サーバー側で受け取る名前を指定
+        userIdField.value = userId; // ユーザーIDの値をセット
+
+        // フォームにuserIdフィールドを追加
+        document.getElementById("userForm").appendChild(userIdField);
+
+        // 必要に応じてボタンのテキストを変更する
+        const submitButton = document.querySelector("button");
+        submitButton.textContent = "ユーザー登録";
+      })
+      .catch((err) => {
+        console.log("プロフィール取得エラー: ", err);
+      });
+  });
+</script>
+
 <style>
-      * {
-        text-align: center;
+      .question {
+        border-bottom-style: double;
       }
-            @media screen and (max-width: 768px) {
-      * {
-      font-size:85% ; /* スマホではフォントサイズを小さくする */
-      }
-      }
+
       .menu {
         position: fixed;
         left: 0;
@@ -167,7 +185,8 @@
           padding: 5px;
         }
       }
-      h1 {
+
+          h1 {
         font-family: sans-serif;
         display: flex;
         align-items: center; /* 縦方向の中央揃え */
@@ -177,12 +196,23 @@
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 10px;
+        font-size: 85%;
       }
 
-      h2 {
-        font-family: sans-serif;
-        border-style: double;
+      input {
+        font-size: 200%;
+        background: skyblue;
+        display: inline-block;
       }
-    </style>
+
+      button {
+        font-size: 200%;
+        display: inline-block;
+      }
+      .information{
+        border-style: dotted;
+        display: inline-block;
+      }
+      </style>
   </body>
 </html>
